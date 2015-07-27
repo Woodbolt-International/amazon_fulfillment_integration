@@ -18,7 +18,7 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
 
   post '/get_inventory_levels' do
     begin
-      AmazonFulfillment::GetInventory.call.result.each do |inventory|
+      AmazonFulfillment::GetInventory.call.result.each do |inventory_level|
         add_object :inventory, {
           id: inventory_level['ASIN'],
           location: 'AMAZON-UK',

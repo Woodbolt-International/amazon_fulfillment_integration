@@ -16,8 +16,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     bugsnag (2.8.10)
       json (~> 1.7, >= 1.7.7)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     excon (0.45.4)
@@ -56,6 +59,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    safe_yaml (1.0.4)
     simple_command (0.0.9)
     sinatra (1.4.6)
       rack (~> 1.4)
@@ -73,6 +77,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    webmock (1.21.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -90,3 +97,4 @@ DEPENDENCIES
   tilt (~> 1.4.1)
   tilt-jbuilder
   unicorn (~> 4.9)
+  webmock (~> 1.21)
