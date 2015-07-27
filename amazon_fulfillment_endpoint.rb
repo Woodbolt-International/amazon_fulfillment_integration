@@ -32,6 +32,15 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
     end
   end
 
+  post '/push_order' do
+    begin
+      AmazonFulfillment::PushOrder.call(@payload['order'])
+      result 200, 'The orde was correctly pushed'
+    rescue Excon::Errors::ServiceUnavailable => e
+      result 500, e.response.message
+    end
+  end
+
   private
 
 end
