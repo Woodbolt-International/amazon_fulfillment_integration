@@ -13,7 +13,7 @@ module AmazonFulfillment
     def call
       client.create_fulfillment_order(
         @order['id'],
-        @order['id'],
+        @order['shipments'][0]['id'],
         @order['placed_on'],
         '',
         'Standard',

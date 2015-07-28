@@ -43,28 +43,6 @@ module AmazoneResponse
         <GetFulfillmentOrderResult>
           <FulfillmentOrderItem>
             <member>
-              <SellerSKU>SKU100</SellerSKU>
-              <GiftMessage>giftwrap_message</GiftMessage>
-              <SellerFulfillmentOrderItemId>merchant_order_item_id_2
-              </SellerFulfillmentOrderItemId>
-              <EstimatedShipDateTime>2014-01-03T07:07:53Z
-              </EstimatedShipDateTime>
-              <DisplayableComment>Example comment</DisplayableComment>
-              <UnfulfillableQuantity>0</UnfulfillableQuantity>
-              <CancelledQuantity>1</CancelledQuantity>
-              <Quantity>5</Quantity>
-              <EstimatedArrivalDateTime>2014-01-05T08:07:53Z
-              </EstimatedArrivalDateTime>
-              <PerUnitPrice>
-                <CurrencyCode>JPY</CurrencyCode>
-                <Value>2500</Value>
-              </PerUnitPrice>
-              <PerUnitTax>
-                <CurrencyCode>JPY</CurrencyCode>
-                <Value>5000</Value>
-              </PerUnitTax>
-            </member>
-            <member>
               <SellerSKU>SKU101</SellerSKU>
               <GiftMessage>giftwrap_message</GiftMessage>
               <SellerFulfillmentOrderItemId>merchant_order_item_id_1
@@ -99,7 +77,7 @@ module AmazoneResponse
             </NotificationEmailList>
             <StatusUpdatedDateTime>2014-01-02T23:48:48Z
             </StatusUpdatedDateTime>
-            <SellerFulfillmentOrderId>extern_id_1154539615776
+            <SellerFulfillmentOrderId>R574098181
             </SellerFulfillmentOrderId>
             <DestinationAddress>
               <PostalCode>153-0002</PostalCode>
@@ -139,27 +117,10 @@ module AmazoneResponse
           </FulfillmentOrder>
           <FulfillmentShipment>
             <member>
-              <FulfillmentShipmentStatus>PENDING</FulfillmentShipmentStatus>
-              <FulfillmentShipmentItem>
-                <member>
-                  <SellerSKU>SKU100</SellerSKU>
-                  <SellerFulfillmentOrderItemId>merchant_order_item_id_2
-                  </SellerFulfillmentOrderItemId>
-                  <Quantity>2</Quantity>
-                  <PackageNumber>0</PackageNumber>
-                </member>
-              </FulfillmentShipmentItem>
-              <AmazonShipmentId>DnMDLWJWN</AmazonShipmentId>
-              <ShippingDateTime>2014-01-03T07:00:00Z</ShippingDateTime>
-              <FulfillmentCenterId>RNO1</FulfillmentCenterId>
-              <EstimatedArrivalDateTime>2014-01-04T07:00:00Z
-              </EstimatedArrivalDateTime>
-            </member>
-            <member>
               <FulfillmentShipmentStatus>SHIPPED</FulfillmentShipmentStatus>
               <FulfillmentShipmentItem>
                 <member>
-                  <SellerSKU>SKU101/SellerSKU>
+                  <SellerSKU>SKU101</SellerSKU>
                   <SellerFulfillmentOrderItemId>merchant_order_item_id_1
                   </SellerFulfillmentOrderItemId>
                   <Quantity>1</Quantity>

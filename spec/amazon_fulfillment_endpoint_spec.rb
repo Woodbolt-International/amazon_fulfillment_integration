@@ -3,6 +3,10 @@ require 'spec_helper'
 describe AmazonFulfillmentEndpoint do
   let(:order_store) { OrderStore.new }
 
+  before do
+    order_store.redis.del 'orders'
+  end
+
   describe 'POST /get_inventory_levels' do
     context 'when Amazon returns an error response' do
       it 'parses the error' do
@@ -41,11 +45,15 @@ describe AmazonFulfillmentEndpoint do
     end
 
     it 'adds order id to order store' do
-      expect(order_store.redis.lrem('orders', 1, 'CL574098181')).to equal(1)
+      expect(order_store.redis.lrem('orders', 1, 'R574098181')).to eq(1)
     end
   end
 
   describe 'POST /get_shipment_info' do
+    before do
+      order_store.add('R574098181')
+    end
+
     context 'when Amazon returns an error response' do
       it 'parses the error' do
         stub_request(:any, /mws-eu.amazonservices.com/).to_raise("An Amazon Error")
@@ -58,7 +66,6 @@ describe AmazonFulfillmentEndpoint do
 
     context 'when Amazon returns an order' do
       it 'parses the shipment info' do
-        order_store.add('R574098181')
         stub_request(:any, /mws-eu.amazonservices.com/).to_return(
           headers: { 'Content-Type': 'text/xml' },
           body: AmazoneResponse.order_info

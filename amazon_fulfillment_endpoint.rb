@@ -43,7 +43,14 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
 
   post '/get_shipment_info' do
     begin
-      p AmazonFulfillment::GetShipmentInfo.call.result
+      AmazonFulfillment::GetShipmentInfo.call.result.each do |shipment|
+        add_object :shipment, {
+          id: shipment['FulfillmentOrder']['DisplayableOrderId'],
+          order_id: shipment['FulfillmentOrder']['SellerFulfillmentOrderId'],
+          status: shipment['FulfillmentShipment']['member']['FulfillmentShipmentStatus'],
+          tracking: shipment['FulfillmentShipment']['member']['FulfillmentShipmentPackage']['member']['TrackingNumber']
+        }
+      end
       result 200, 'The shipment info was imported correctly'
     rescue Excon::Errors::ServiceUnavailable => e
       result 500, e.response.message

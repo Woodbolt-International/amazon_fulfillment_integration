@@ -12,7 +12,7 @@ module AmazonFulfillment
     def call
       @order_store.all.map do |id|
         @order_store.delete(id)
-        client.get_fulfillment_order(id)
+        client.get_fulfillment_order(id).parse
       end
     end
 
