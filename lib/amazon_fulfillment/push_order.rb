@@ -14,6 +14,7 @@ module AmazonFulfillment
         @order['id'],
         @order['id'],
         @order['placed_on'],
+        '',
         'Standard',
         destination_address,
         items
@@ -28,13 +29,13 @@ module AmazonFulfillment
 
     def destination_address
       {
-        name: "#{shipping_address.firstname} #{shipping_address.lastname}",
-        Line1: shipping_address.address1,
-        Line2: shipping_address.address2,
-        City: shipping_address.city,
-        CountryCode: shipping_address.country,
-        StateOrProvinceCode: shipping_address.state,
-        PostalCode: shipping_address.zipcode,
+        name: "#{shipping_address['firstname']} #{shipping_address['lastname']}",
+        Line1: shipping_address['address1'],
+        Line2: shipping_address['address2'],
+        City: shipping_address['city'],
+        CountryCode: shipping_address['country'],
+        StateOrProvinceCode: shipping_address['state'],
+        PostalCode: shipping_address['zipcode']
       }
     end
 
