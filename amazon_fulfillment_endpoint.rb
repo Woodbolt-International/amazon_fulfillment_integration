@@ -35,12 +35,18 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
   post '/push_order' do
     begin
       AmazonFulfillment::PushOrder.call(@payload['order'])
-      result 200, 'The orde was correctly pushed'
+      result 200, 'The order was correctly pushed'
     rescue Excon::Errors::ServiceUnavailable => e
       result 500, e.response.message
     end
   end
 
-  private
-
+  post '/get_shipment_info' do
+    begin
+      p AmazonFulfillment::GetShipmentInfo.call.result
+      result 200, 'The shipment info was imported correctly'
+    rescue Excon::Errors::ServiceUnavailable => e
+      result 500, e.response.message
+    end
+  end
 end

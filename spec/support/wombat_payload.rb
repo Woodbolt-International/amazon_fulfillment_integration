@@ -6,10 +6,10 @@ module WombatPayload
 
     def order
       '{ "request_id": "12e12341523e449c3000001", "order": {
-        "id": "CL574098181",
+        "id": "R574098181",
         "status": "complete",
         "channel": "spree",
-        "email": "jarrellmichael@gmaill.com",
+        "email": "spree@spree.com",
         "currency": "USD",
         "placed_on": "2015-07-27T08:14:35Z",
         "updated_at": "2015-07-27T08:14:35Z",
@@ -23,36 +23,13 @@ module WombatPayload
           "discount": -10,
           "handling": 0
         },
-        "adjustments": [
-          {
-            "name": "tax",
-            "value": 0,
-            "code": "TAX"
-          },
-          {
-            "name": "shipping",
-            "value": 12,
-            "code": "FRT"
-          },
-          {
-            "name": "handling",
-            "value": 0,
-            "code": "HLD"
-          },
-          {
-            "name": "Nickmercs",
-            "value": "-10.0",
-            "code": "NICKMERCS"
-          }
-        ],
-        "guest_token": "Q_Xupxd3T62QzzUd92jNNQ",
         "shipping_instructions": null,
-        "user_id": 117044,
+        "user_id": 1234,
         "considered_risky": false,
         "line_items": [
           {
             "id": 617512,
-            "product_id": "ZMA120-v1.0",
+            "product_id": "ZMA12",
             "name": "ZMA",
             "quantity": 1,
             "price": 39.99,
@@ -71,17 +48,17 @@ module WombatPayload
             "payment_method": "Credit Card with Payment Profiles",
             "payment_method_card": "visa",
             "source": {
-              "name": "Michael Jarrell",
+              "name": "Jack Russell",
               "cc_type": "visa",
-              "last_digits": "5272",
+              "last_digits": "1234",
               "source_type": "Spree::CreditCard"
             }
           }
         ],
         "shipping_address": {
-          "firstname": "Michael",
-          "lastname": "Jarrell",
-          "address1": "5167 Butterfly Lane",
+          "firstname": "Jack",
+          "lastname": "Russell",
+          "address1": "5167 Butterfly Street",
           "address2": "",
           "zipcode": "34288",
           "city": "North Port",
@@ -90,9 +67,9 @@ module WombatPayload
           "phone": ""
         },
         "billing_address": {
-          "firstname": "Michael",
-          "lastname": "Jarrell",
-          "address1": "5167 Butterfly Lane",
+          "firstname": "Jack",
+          "lastname": "Russel",
+          "address1": "5167 Butterfly Street",
           "address2": "",
           "zipcode": "34288",
           "city": "North Port",
@@ -102,12 +79,12 @@ module WombatPayload
         },
         "shipments": [
           {
-            "id": "CLH78653584817",
-            "order_id": "CL574098181",
-            "email": "jarrellmichael@gmaill.com",
+            "id": "H78653584817",
+            "order_id": "R574098181",
+            "email": "spree@spree.com",
             "cost": 12,
             "status": "ready",
-            "stock_location": "Cellucor",
+            "stock_location": "Canada",
             "shipping_method": "2 Days",
             "tracking": null,
             "placed_on": "2015-07-27T08:14:35Z",
@@ -124,7 +101,7 @@ module WombatPayload
             "channel": "spree",
             "items": [
               {
-                "product_id": "ZMA120-v1.0",
+                "product_id": "ZMA12",
                 "name": "ZMA",
                 "quantity": 1,
                 "price": 39.99
@@ -132,9 +109,9 @@ module WombatPayload
             ],
             "shipping_method_code": "2DA",
             "billing_address": {
-              "firstname": "Michael",
-              "lastname": "Jarrell",
-              "address1": "5167 Butterfly Lane",
+              "firstname": "Jack",
+              "lastname": "Russell",
+              "address1": "5167 Butterfly Street",
               "address2": "",
               "zipcode": "34288",
               "city": "North Port",
@@ -143,9 +120,9 @@ module WombatPayload
               "phone": ""
             },
             "shipping_address": {
-              "firstname": "Michael",
-              "lastname": "Jarrell",
-              "address1": "5167 Butterfly Lane",
+              "firstname": "Jack",
+              "lastname": "Russell",
+              "address1": "5167 Butterfly Street",
               "address2": "",
               "zipcode": "34288",
               "city": "North Port",

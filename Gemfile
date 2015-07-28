@@ -10,6 +10,8 @@ gem 'endpoint_base', github: 'spree/endpoint_base'
 gem 'peddler', '~> 0.17'
 gem 'simple_command', '~> 0.0.9'
 
+gem 'redis', '~> 3.2'
+
 group :production do
   gem 'foreman'
   gem 'unicorn', '~> 4.9'

@@ -7,6 +7,7 @@ module AmazonFulfillment
 
     def initialize(order)
       @order = order
+      @order_store = OrderStore.new
     end
 
     def call
@@ -19,6 +20,7 @@ module AmazonFulfillment
         destination_address,
         items
       )
+      @order_store.add(@order['id'])
     end
 
     private
