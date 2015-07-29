@@ -28,6 +28,7 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
       end
       result 200, 'The inventory levels was imported correctly'
     rescue Excon::Errors::ServiceUnavailable => e
+      Bugsnag.notify(e)
       result 500, e.response.message
     end
   end
@@ -37,6 +38,7 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
       AmazonFulfillment::PushOrder.call(@payload['order'])
       result 200, 'The order was correctly pushed'
     rescue Excon::Errors::ServiceUnavailable => e
+      Bugsnag.notify(e)
       result 500, e.response.message
     end
   end
@@ -53,6 +55,7 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
       end
       result 200, 'The shipment info was imported correctly'
     rescue Excon::Errors::ServiceUnavailable => e
+      Bugsnag.notify(e)
       result 500, e.response.message
     end
   end
