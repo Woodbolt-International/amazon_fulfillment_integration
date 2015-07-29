@@ -18,7 +18,8 @@ module AmazonFulfillment
         '',
         'Standard',
         destination_address,
-        items
+        items,
+        { fulfillment_action: 'Hold' }
       )
       @order_store.add(@order['id'])
     end
