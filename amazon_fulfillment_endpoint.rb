@@ -15,8 +15,7 @@ Dir['./lib/**/*.rb'].each(&method(:require))
 class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
   set :logging, true
   use Bugsnag::Rack
-
-  endpoint_key ENV['ENDPOINT_KEY']
+  enable :raise_errors
 
   post '/get_inventory_levels' do
     begin
