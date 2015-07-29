@@ -15,7 +15,7 @@ module AmazonFulfillment
         @order['id'],
         @order['shipments'][0]['id'],
         @order['placed_on'],
-        '',
+        "Order Number: #{@order['id']}\nThanks for ordering from cellucor.eu!",
         'Standard',
         destination_address,
         items,
@@ -33,21 +33,21 @@ module AmazonFulfillment
     def destination_address
       {
         name: "#{shipping_address['firstname']} #{shipping_address['lastname']}",
-        Line1: shipping_address['address1'],
-        Line2: shipping_address['address2'],
-        City: shipping_address['city'],
-        CountryCode: shipping_address['country'],
-        StateOrProvinceCode: shipping_address['state'],
-        PostalCode: shipping_address['zipcode']
+        line1: shipping_address['address1'],
+        line2: shipping_address['address2'],
+        city: shipping_address['city'],
+        country_code: shipping_address['country'],
+        state_or_province_code: shipping_address['state'],
+        postal_code: shipping_address['zipcode']
       }
     end
 
     def items
       @order['line_items'].map do |line_item|
         {
-          SellerSKU: line_item['product_id'],
-          SellerFulfillmentOrderItemId: @order['id'],
-          Quantity: line_item['quantity']
+          seller_sku: line_item['product_id'],
+          seller_fulfillment_order_item_id: line_item['product_id'],
+          quantity: line_item['quantity']
         }
       end
     end
