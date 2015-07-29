@@ -17,9 +17,9 @@ module AmazonFulfillment
     private
 
     def parse_inventory_levels(list = inventory_list)
-      (list['InventorySupplyList']['member'] || []).each do |inventory_level|
+      list['InventorySupplyList']['member'].each do |inventory_level|
         @inventory_levels << inventory_level
-      end
+      end if list['InventorySupplyList'] && list['InventorySupplyList']['member']
       parse_inventory_list(inventory_list_by_next_token(list['NextToken'])) if inventory_list['NextToken']
     end
 
