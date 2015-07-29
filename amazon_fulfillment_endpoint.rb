@@ -16,6 +16,8 @@ class AmazonFulfillmentEndpoint < EndpointBase::Sinatra::Base
   set :logging, true
   use Bugsnag::Rack
 
+  endpoint_key ENV['ENDPOINT_KEY']
+
   post '/get_inventory_levels' do
     begin
       AmazonFulfillment::GetInventory.call.result.each do |inventory_level|
