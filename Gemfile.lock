@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/spree/endpoint_base.git
+  remote: https://github.com/spree/endpoint_base.git
   revision: b3077af5b54ba18ed47bdbef01395b0027ad6637
   specs:
     endpoint_base (0.3)
@@ -16,7 +16,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     bugsnag (2.8.10)
       json (~> 1.7, >= 1.7.7)
     crack (0.4.2)
@@ -40,6 +41,7 @@ GEM
     peddler (0.17.1)
       jeff (~> 1.3)
       multi_xml (~> 0.5.0)
+    public_suffix (5.0.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
